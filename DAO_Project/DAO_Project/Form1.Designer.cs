@@ -1,4 +1,4 @@
-﻿namespace DAO
+﻿namespace DAO_Project
 {
     partial class Form1
     {

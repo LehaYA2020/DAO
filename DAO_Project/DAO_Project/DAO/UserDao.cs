@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAO
+namespace DAO_Project.DAO
 {
-    class UserDAO
+    class UserDao
     {
-       
     }
 }

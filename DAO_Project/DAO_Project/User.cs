@@ -8,14 +8,8 @@ namespace DAO_Project
 {
     class User
     {
-        public string name;
-        public string surname;
-        public int Id;
-        public User(int Id, string name, string surname)
-        {
-            this.Id = Id;
-            this.name = name;
-            this.surname = surname;
-        }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public int Id { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace DAO_Project
 {
     public partial class Form1 : Form
     {
-        UserDao Add;
+        UserDao userDao = new UserDao();
         public Form1()
         {
             InitializeComponent();
@@ -21,23 +21,24 @@ namespace DAO_Project
 
         private void bttnAdd_Click(object sender, EventArgs e)
         {
-            using (var context = new MyDBContext())
+            var user = new User()
             {
-                var user = new User()
-                {
-                    Name = textBoxName.Text,
-                    Surname = textBoxSurname.Text
-                };
-
-                context.Users.Add(user);
-                context.SaveChanges();
-                textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}";
-
-            }
+                Name = textBoxName.Text,
+                Surname = textBoxSurname.Text
+            };
+            userDao.Save(user);
+            textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}";
         }
 
         private void bttnConcl_Click(object sender, EventArgs e)
         {
+            int Id = Convert.ToInt32(userId.Text);//TODO TryParse
+            User user = userDao.FindById(Id);
+            if (user != null)
+            {
+                textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}";//В метод все сообщения(printUser, Errors)
+            }
+            else { textBoxConclusion.Text = $"User with ID={Id} not found"; }
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userId = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.bttnAdd = new System.Windows.Forms.Button();
@@ -36,12 +36,12 @@
             this.bttnConcl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // userId
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(31, 20);
-            this.textBox1.TabIndex = 0;
+            this.userId.Location = new System.Drawing.Point(216, 44);
+            this.userId.Name = "userId";
+            this.userId.Size = new System.Drawing.Size(31, 20);
+            this.userId.TabIndex = 0;
             // 
             // textBoxName
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.bttnAdd);
             this.Controls.Add(this.textBoxSurname);
             this.Controls.Add(this.textBoxName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userId);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -105,7 +105,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userId;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.Button bttnAdd;

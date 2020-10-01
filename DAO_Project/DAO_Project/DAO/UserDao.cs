@@ -14,13 +14,22 @@ namespace DAO_Project.DAO
         public void Save(User user)
         {
                 context.Users.Add(user);
-                context.Users.Add(user);
                 context.SaveChanges();
+        }
+        public void Remove(User user)
+        {
+            context.Users.Remove(user);
+            context.SaveChanges();
+        }
+
+        public void Update(User user)
+        {
+            context.Users.Attach(user);
+            context.SaveChanges();
         }
 
         public User FindById(int Id)
         {
-            
             return context.Users.Find(Id);
         }
     }

@@ -57,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\UserDao.cs" />
+    <Compile Include="Migrations\202009270221122_AddUserNumber.cs" />
+    <Compile Include="Migrations\202009270221122_AddUserNumber.designer.cs">
+      <DependentUpon>202009270221122_AddUserNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDBContext.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,6 +74,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009270221122_AddUserNumber.resx">
+      <DependentUpon>202009270221122_AddUserNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

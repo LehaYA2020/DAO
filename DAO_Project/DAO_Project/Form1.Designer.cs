@@ -34,25 +34,27 @@
             this.bttnAdd = new System.Windows.Forms.Button();
             this.textBoxConclusion = new System.Windows.Forms.TextBox();
             this.bttnConcl = new System.Windows.Forms.Button();
+            this.textBoxNumber = new System.Windows.Forms.TextBox();
+            this.bttnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userId
             // 
-            this.userId.Location = new System.Drawing.Point(216, 44);
+            this.userId.Location = new System.Drawing.Point(136, 44);
             this.userId.Name = "userId";
             this.userId.Size = new System.Drawing.Size(31, 20);
             this.userId.TabIndex = 0;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(266, 44);
+            this.textBoxName.Location = new System.Drawing.Point(173, 44);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(174, 20);
             this.textBoxName.TabIndex = 1;
             // 
             // textBoxSurname
             // 
-            this.textBoxSurname.Location = new System.Drawing.Point(471, 44);
+            this.textBoxSurname.Location = new System.Drawing.Point(374, 44);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(173, 20);
             this.textBoxSurname.TabIndex = 2;
@@ -85,11 +87,30 @@
             this.bttnConcl.UseVisualStyleBackColor = true;
             this.bttnConcl.Click += new System.EventHandler(this.bttnConcl_Click);
             // 
+            // textBoxNumber
+            // 
+            this.textBoxNumber.Location = new System.Drawing.Point(571, 44);
+            this.textBoxNumber.Name = "textBoxNumber";
+            this.textBoxNumber.Size = new System.Drawing.Size(144, 20);
+            this.textBoxNumber.TabIndex = 6;
+            // 
+            // bttnUpdate
+            // 
+            this.bttnUpdate.Location = new System.Drawing.Point(216, 226);
+            this.bttnUpdate.Name = "bttnUpdate";
+            this.bttnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.bttnUpdate.TabIndex = 7;
+            this.bttnUpdate.Text = "Обновить";
+            this.bttnUpdate.UseVisualStyleBackColor = true;
+            this.bttnUpdate.Click += new System.EventHandler(this.bttnUpdate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bttnUpdate);
+            this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.bttnConcl);
             this.Controls.Add(this.textBoxConclusion);
             this.Controls.Add(this.bttnAdd);
@@ -111,6 +132,8 @@
         private System.Windows.Forms.Button bttnAdd;
         private System.Windows.Forms.TextBox textBoxConclusion;
         private System.Windows.Forms.Button bttnConcl;
+        private System.Windows.Forms.TextBox textBoxNumber;
+        private System.Windows.Forms.Button bttnUpdate;
     }
 }
 

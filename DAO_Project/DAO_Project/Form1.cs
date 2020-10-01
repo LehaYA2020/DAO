@@ -24,7 +24,8 @@ namespace DAO_Project
             var user = new User()
             {
                 Name = textBoxName.Text,
-                Surname = textBoxSurname.Text
+                Surname = textBoxSurname.Text,
+                Number = textBoxNumber.Text
             };
             userDao.Save(user);
             textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}";
@@ -32,13 +33,22 @@ namespace DAO_Project
 
         private void bttnConcl_Click(object sender, EventArgs e)
         {
-            int Id = Convert.ToInt32(userId.Text);//TODO TryParse
-            User user = userDao.FindById(Id);
-            if (user != null)
+            int Id = 0;
+            if (Int32.TryParse(userId.Text, out Id))
             {
-                textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}";//В метод все сообщения(printUser, Errors)
+                User user = userDao.FindById(Id);
+                if (user != null)
+                {
+                    textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}, Number = {user.Number}";//В метод все сообщения(printUser, Errors)
+                }
+                else { textBoxConclusion.Text = $"User with ID={Id} not found"; }
             }
-            else { textBoxConclusion.Text = $"User with ID={Id} not found"; }
+        }
+
+        private void bttnUpdate_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(userId.Text);
+            userDao.Update(userDao.FindById(Id));
         }
     }
 }

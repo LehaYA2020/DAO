@@ -36,6 +36,7 @@
             this.bttnConcl = new System.Windows.Forms.Button();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.bttnUpdate = new System.Windows.Forms.Button();
+            this.bttnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userId
@@ -104,11 +105,22 @@
             this.bttnUpdate.UseVisualStyleBackColor = true;
             this.bttnUpdate.Click += new System.EventHandler(this.bttnUpdate_Click);
             // 
+            // bttnRemove
+            // 
+            this.bttnRemove.Location = new System.Drawing.Point(216, 197);
+            this.bttnRemove.Name = "bttnRemove";
+            this.bttnRemove.Size = new System.Drawing.Size(75, 23);
+            this.bttnRemove.TabIndex = 8;
+            this.bttnRemove.Text = "Delete";
+            this.bttnRemove.UseVisualStyleBackColor = true;
+            this.bttnRemove.Click += new System.EventHandler(this.bttnRemove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bttnRemove);
             this.Controls.Add(this.bttnUpdate);
             this.Controls.Add(this.textBoxNumber);
             this.Controls.Add(this.bttnConcl);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.Button bttnConcl;
         private System.Windows.Forms.TextBox textBoxNumber;
         private System.Windows.Forms.Button bttnUpdate;
+        private System.Windows.Forms.Button bttnRemove;
     }
 }
 

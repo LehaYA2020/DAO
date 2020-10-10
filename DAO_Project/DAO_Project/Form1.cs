@@ -1,4 +1,5 @@
 ﻿using DAO_Project.DAO;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +28,12 @@ namespace DAO_Project
                 Surname = textBoxSurname.Text,
                 Number = textBoxNumber.Text
             };
-            userDao.Save(user);
-            textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}";
+            //user = userDao.Save(user);
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand($"INSERT into Users(Name, Surname, Number) VALUES ({user.Name},{user.Surname},{user.Number})");
+            adapter.SelectCommand = command;
+            ShowMessages(user.ToString());
         }
 
         private void bttnConcl_Click(object sender, EventArgs e)
@@ -39,16 +44,43 @@ namespace DAO_Project
                 User user = userDao.FindById(Id);
                 if (user != null)
                 {
-                    textBoxConclusion.Text = $"Id = {user.Id}, Name = {user.Name}, Surname = {user.Surname}, Number = {user.Number}";//В метод все сообщения(printUser, Errors)
+                    ShowMessages(user.ToString());
                 }
-                else { textBoxConclusion.Text = $"User with ID={Id} not found"; }
+                else { ShowMessages($"User with ID={Id} not found"); }
             }
         }
 
         private void bttnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                User user = new User()
+                {
+                    Id = Convert.ToInt32(userId.Text),
+                    Name = textBoxName.Text,
+                    Surname = textBoxSurname.Text,
+                    Number = textBoxNumber.Text
+                };
+
+                user = userDao.Update(user);
+
+                ShowMessages(user.ToString());
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show (Ex.Message, "Smth went wrong: ",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void bttnRemove_Click(object sender, EventArgs e)
+        {
             int Id = Convert.ToInt32(userId.Text);
-            userDao.Update(userDao.FindById(Id));
+            userDao.Remove(userDao.FindById(Id));
+        }
+
+        private void ShowMessages(string message)
+        {
+            textBoxConclusion.Text = message;
         }
     }
 }

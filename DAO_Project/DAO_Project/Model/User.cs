@@ -13,5 +13,10 @@ namespace DAO_Project
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Number { get; set; }
+
+        public override string ToString()
+        {
+          return  $"Id = {Id}, Name = {Name}, Surname = {Surname}, Number = {Number}";
+        }
     }
 }

@@ -26,13 +26,6 @@ namespace DAO_Project.DAO
 
         public User Update(User user)
         {
-            //context.Users.Attach(user);
-            //int count = context.SaveChanges();
-            //if (count == 1)
-            //{
-            //    return user;
-            //}
-            //throw new EntityNotFoundException($"User with ID={user.Id} not found");
             User forUpdate = FindById(user.Id);
             if (forUpdate != null)
             {

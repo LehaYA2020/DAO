@@ -28,11 +28,7 @@ namespace DAO_Project
                 Surname = textBoxSurname.Text,
                 Number = textBoxNumber.Text
             };
-            //user = userDao.Save(user);
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand($"INSERT into Users(Name, Surname, Number) VALUES ({user.Name},{user.Surname},{user.Number})");
-            adapter.SelectCommand = command;
+            user = userDao.Save(user);
             ShowMessages(user.ToString());
         }
 

@@ -16,7 +16,28 @@ namespace DAO_Project
 
         public override string ToString()
         {
-          return  $"Id = {Id}, Name = {Name}, Surname = {Surname}, Number = {Number}";
+            return $"Id = {Id}, Name = {Name}, Surname = {Surname}, Number = {Number}";
+        }
+        public override bool Equals(object obj)
+        {
+            if (this == obj)
+            {
+                return true;
+            }
+            if (obj == null)
+            {
+                return false;
+            }
+            if (this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+            User other = (User)obj;
+            return this.Id.Equals(other.Id);
+        }
+        public override int GetHashCode()
+        {
+            return Id;
         }
     }
 }
